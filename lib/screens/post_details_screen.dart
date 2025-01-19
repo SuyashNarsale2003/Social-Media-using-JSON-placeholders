@@ -18,7 +18,7 @@ class PostDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post Details',style: TextStyle(color: Colors.white)),
+        title: Text('Post Comments',style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.teal
       ),
       body: Obx(() {
