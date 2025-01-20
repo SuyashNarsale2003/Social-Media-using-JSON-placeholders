@@ -29,6 +29,7 @@ class CommentController extends GetxController {
     try {
       final response = await ApiService().postComment(postId, name, email, body);
       comments.add(CommentModel.fromJson(response.data)); // Add the new comment to the list
+      AppData().comments.add(CommentModel.fromJson(response.data));
     } catch (e) {
       throw AppExceptions('Failed to post comment');
     }

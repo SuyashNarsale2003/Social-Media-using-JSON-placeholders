@@ -74,21 +74,15 @@ class CommentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // Navigate to UserProfileScreen when the comment author's name is tapped
-        Get.to(UserProfileScreen(userId: comment.id)); // Assuming comment.id is the userId
-      },
-      child: Card(
-        margin: EdgeInsets.all(8),
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: ListTile(
-          title: Text(comment.name, style: TextStyle(fontWeight: FontWeight.bold)),
-          subtitle: Text(comment.body),
-        ),
+    return Card(
+      margin: EdgeInsets.all(8),
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: ListTile(
+        title: Text(comment.name, style: TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(comment.body),
       ),
     );
   }

@@ -25,7 +25,12 @@ class PostController extends GetxController {
   void createPost(String title, String body) async {
     try {
       await apiService.createPost(title, body);
-      fetchPosts(); // Refresh the posts list
+      posts.add(PostModel.fromJson({
+        'id':(posts.length+1),
+        'title':title,
+        'body':body,
+        'userId':(posts.length+1),
+      }));
     } catch (e) {
       throw AppExceptions('Failed to upload post');
 
